@@ -1,0 +1,59 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+
+  - name: milestone1monthlyaverage
+    description: "Calculate Monthly average NAV, Repurchase & Sale Price for each scheme."
+    columns:
+      - name: Scheme
+        tests:
+          - not_null
+      - name: Month
+      - name: Year
+      - name: Avg_Nav
+      - name: Avg_Repurchase_Price
+      - name: Avg_Sales_Price
+  - name: milestone1_2_schememaxminnav
+    description: "Find out each scheme’s Max and Min NAV value and Date it occurred"
+    columns:
+      - name: Scheme
+      - name: Min_Nav
+      - name: Max_Nav
+      - name: Date
+  - name: Mutualfund_Discontinued
+    description: "List of mutual funds which were discontinued in a given year"
+    columns:
+      - name: Mutual_Funds
+  - name: extratable
+    description: "taken a sub table"
+    columns:
+      - name: Date
+      - name: Year
+      - name: Month
+      - name: Nav
+  - name: liquidfundcategory
+    description: "Weekly, monthly and ytd results for all funds in liquid fund category"
+    columns:
+         - name: code
+         - name: YTD
+         - name: MTD
+
+  - name: milestone2_1_ytdmtd
+    description: "Mutual fund performance "
+    columns:
+       - name: Nav
+       - name: YTD
+       - name: MTD
+       - name: Inception
